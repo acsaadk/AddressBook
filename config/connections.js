@@ -41,11 +41,11 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
   developmentDatabase: {
-    adapter: 'sails-mysql',
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER, //optional
-    password: process.env.MYSQL_PASSWORD, //optional
-    database: process.env.MYSQL_DATABASE //optional
+    adapter: 'sails-postgresql',
+    host: process.env.PGSQL_HOST,
+    user: process.env.PGSQL_USER,
+    password: process.env.PGSQL_PASSWORD,
+    database: process.env.PGSQL_DATABASE
   },
 
   /***************************************************************************
