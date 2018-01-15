@@ -11,7 +11,7 @@ module.exports = function(req, res, next) {
       })
     }
     const token = authorization.split(' ')[1]
-    var decoded = JWT.verify(token, 'secret')
+    var decoded = JWT.verify(token, process.env.JWT_SECRET)
     return User.findOneById(decoded.sub)
     .then(user => {
       req.user = user

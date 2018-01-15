@@ -3,7 +3,6 @@ const JWT = require('jsonwebtoken')
 /**
  * User.js
  *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
@@ -53,7 +52,7 @@ module.exports = {
                 firebase: token
               }
             }
-          }, 'secret')
+          }, process.env.JWT_SECRET)
         }
       })
     }
@@ -65,7 +64,6 @@ module.exports = {
   },
 
   findOneById: function(id) {
-    console.log("ID:", id)
     userId = (typeof(id) === "string" && parseInt(id)) || id
     return User.findOne({ id: userId })
     .then(user => user || Promise.reject(new Error('user not found')))

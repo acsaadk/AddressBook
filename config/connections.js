@@ -42,10 +42,10 @@ module.exports.connections = {
   ***************************************************************************/
   developmentDatabase: {
     adapter: 'sails-mysql',
-    host: '127.0.0.1',
-    user: 'root', //optional
-    password: 'root', //optional
-    database: 'address-book' //optional
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER, //optional
+    password: process.env.MYSQL_PASSWORD, //optional
+    database: process.env.MYSQL_DATABASE //optional
   },
 
   /***************************************************************************
